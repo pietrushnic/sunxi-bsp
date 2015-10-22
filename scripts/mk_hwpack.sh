@@ -46,7 +46,7 @@ cp_android_files() {
 
 	mkdir -p "${rootfs}/boot"
 	## kernel
-	cp -r "$K_O_PATH"/arch/arm/boot/uImage "${rootfs}/boot/"
+	cp -r "$K_O_PATH"/arch/arm/boot/zImage "${rootfs}/boot/"
 	cp -r "build/$BOARD.bin" "${rootfs}/boot/script.bin"
 
 	## kernel modules
@@ -80,7 +80,7 @@ create_hwpack() {
 
 	## kernel
 	mkdir -p "$kerneldir"
-	cp -r "$K_O_PATH"/arch/arm/boot/uImage "$kerneldir/"
+	cp -r "$K_O_PATH"/arch/arm/boot/zImage "$kerneldir/"
 	cp -r "build/$BOARD.bin" "$kerneldir/script.bin"
 
 	## boot scripts (optional)

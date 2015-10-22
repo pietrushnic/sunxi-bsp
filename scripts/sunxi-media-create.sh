@@ -162,7 +162,7 @@ copyData ()
 	local rootfs_copied=
 
 	echo "Copy VFAT partition files to SD Card"
-	cp $HWPACKDIR/kernel/uImage $MNTBOOT ||
+	cp $HWPACKDIR/kernel/zImage $MNTBOOT ||
 		die "Failed to copy VFAT partition data to SD Card"
 	cp $HWPACKDIR/kernel/*.bin $MNTBOOT/script.bin ||
 		die "Failed to copy VFAT partition data to SD Card"
