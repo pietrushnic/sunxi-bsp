@@ -30,12 +30,12 @@ tools: sunxi-tools/.git
 	$(Q)$(MAKE) -C sunxi-tools
 
 ## u-boot
-$(U_CONFIG_H): u-boot-sunxi/.git
+$(U_CONFIG_H): u-boot/.git
 	$(Q)mkdir -p $(U_O_PATH)
-	$(Q)$(MAKE) -C u-boot-sunxi $(UBOOT_CONFIG)_config O=$(U_O_PATH) CROSS_COMPILE=$(CROSS_COMPILE) -j$J
+	$(Q)$(MAKE) -C u-boot $(UBOOT_CONFIG)_config O=$(U_O_PATH) CROSS_COMPILE=$(CROSS_COMPILE) -j$J
 
 u-boot: $(U_CONFIG_H)
-	$(Q)$(MAKE) -C u-boot-sunxi all O=$(U_O_PATH) CROSS_COMPILE=$(CROSS_COMPILE) -j$J
+	$(Q)$(MAKE) -C u-boot all O=$(U_O_PATH) CROSS_COMPILE=$(CROSS_COMPILE) -j$J
 
 ## linux
 $(K_DOT_CONFIG): linux-sunxi/.git
